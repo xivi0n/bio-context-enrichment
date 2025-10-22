@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bio-agent"
+version = "0.1.0"
+description = "A simple Flask agent for bio-context enrichment"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Mihailo Jovanovic"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+]
+dependencies = [
+    "flask==2.3.3",
+    "requests==2.31.0",
+    "fastmcp>=0.1.0",
+    "python-dotenv>=1.0.0",
+    "openai>=1.0.0",
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/xivi0n/bio-context-enrichment"
+Repository = "https://github.com/xivi0n/bio-context-enrichment"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]

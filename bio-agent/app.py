@@ -119,10 +119,11 @@ def list_tools():
 if __name__ == "__main__":
     # Get port from environment variable, default to 5050
     port = int(os.environ.get("PORT", "5050"))
+    host = os.environ.get("HOST", "0.0.0.0")
 
     logger.info(f"Starting bio-agent Flask app on port {port}...")
 
     # Initialize MCP client before starting the server
     initialize_client()
 
-    app.run(port=port, debug=True)
+    app.run(port=port, debug=True, host=host)
